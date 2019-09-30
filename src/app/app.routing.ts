@@ -35,18 +35,6 @@ export const rootRouterConfig: Routes = [
   //   canActivate: [AuthGuard],
   //   children: [
   //     {
-  //       path: 'dashboard', 
-  //       loadChildren: './views/dashboard/dashboard.module#DashboardModule', 
-  //       data: { title: 'Overview', breadcrumb: 'OVERVIEW'}
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '', 
-  //   component: AdminLayoutComponent,
-  //   canActivate: [AuthGuard],
-  //   children: [
-  //     {
   //       path: 'sites', 
   //       loadChildren: './views/sites/sites.module#SitesModule', 
   //       data: { title: 'Overview', breadcrumb: 'OVERVIEW'}

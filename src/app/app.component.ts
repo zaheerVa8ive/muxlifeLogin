@@ -26,14 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    // this.changePageTitle();
     let user = JSON.parse(localStorage.getItem('user'));
-      // if(user){
-      //   this.router.navigate(['/dashboard']);
-      //   return true;
-      // } else {
-      //   // this.router.navigate(['/sessions/signin']);
-      // }
   }
 
   ngAfterViewInit() {
