@@ -1,0 +1,63 @@
+<div class="app-smart-ctrl">
+  <div fxLayout.gt-md="row wrap" fxLayout.lt-lg="row wrap" fxLayout.xs="column">
+    <div fxFlex="100" [style.margin]="'18px 0px'">
+      <div fxLayout.gt-md="row wrap" fxLayout.lt-lg="row wrap" fxLayout.xs="column">
+        <div fxFlex="25">
+          <a (click)="dataView('scenes')">
+            <div [class.scenes-made-selected]="showScenes==true" fxLayout="row" class="scenes-div">
+              <div class="scenes-img">
+                <!-- <img src="../../../../../assets/icons/scenes1.png" height="60px" alt=""> -->
+                <i class="ml-scenes" style="font-size: 50px;margin: 3px;"></i>
+              </div>
+              <div>
+                <div class="scenes-heading"> Scenes</div>
+                <div class="scenes-sub-heading">One Key control or select "Automatic" for automatic tri..</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div fxFlex="25">
+          <a (click)="dataView('automation')">
+            <div [class.scenes-made-selected]="showScenes==false" fxLayout="row" class="scenes-div">
+              <div class="scenes-img">
+                <!-- <img src="../../../../../assets/icons/automationImg.png" height="60px" alt=""> -->
+                <i class="ml-automation" style="font-size: 50px;margin: 3px; "></i>
+              </div>
+              <div>
+                <div class="scenes-heading">Automation</div>
+                <div class="scenes-sub-heading">Execute automatically according to weather,device..</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div *ngIf="showScenes" fxFlex>
+            <div fxLayoutAlign="end center">
+              <button class="add-btn-a" type="submit" (click)="addScenes()" mat-button color="primary">Add Scenes <span class="add-btn-icon">+</span></button>
+            </div>
+        </div>
+        <div *ngIf="!showScenes" fxFlex>
+          <div fxLayoutAlign="end center">
+            <button class="add-btn-a" type="submit" (click)="addAutomationEvent()" mat-button color="primary">Add Automation <span class="add-btn-icon">+</span></button>
+          </div>
+      </div>  
+      </div>
+    </div>
+    <div [style.margin]="'14px 0px'" fxFlex="100">
+
+      <div *ngIf=" !addScene && !addAutomation" fxLayout.lg="row wrap" fxLayout.lt-lg="row wrap" fxLayout.xs="column">
+        <div *ngIf="showScenes">
+          <app-scenes (editSceneId)="editSceneIdSelected($event)" ></app-scenes>
+        </div>
+        <div *ngIf="!showScenes">
+          <app-automation (automationDetails)="automationSelected($event)"></app-automation>
+        </div>
+      </div>
+      <div *ngIf="addScene">
+        <app-add-scenes (created)="onSceneCreated($event)" [sceneEditId]=selectedSceneId></app-add-scenes>
+      </div>
+      <div *ngIf="addAutomation">
+        <app-add-automation (created)="onAutomationCreated($event)" [automationId]=automationobjectId></app-add-automation>
+      </div>
+    </div>
+  </div>
+</div>

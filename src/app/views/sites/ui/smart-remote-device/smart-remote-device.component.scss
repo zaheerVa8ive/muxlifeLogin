@@ -1,0 +1,47 @@
+.app-smart-remote-device{
+
+    .main-heading{
+        text-align: center;
+    }
+    .multimedia-play-options{
+        margin: 14px 0px 13px 0px;
+        padding: 10px 0px;
+        border-bottom: 1px solid #cccc;
+    }
+    .tv-play-options{
+        margin: 14px 0px 13px 0px;
+        padding: 10px 0px;
+        border-bottom: 1px solid #cccc;
+    }
+    .ml-play21{
+        font-size: 33px;
+        color: #0f7bbf;
+    }
+    .ml-pause1{
+        font-size: 33px;
+        color: red;
+    }
+    .ml-next1{
+        font-size: 16px;
+    }
+    .ml-previous1{
+        font-size: 16px;
+    }
+    .ml-circle-up{
+        font-size: 16px;
+        color: #0f7bbf;
+    }
+    .ml-circle-down{
+        font-size: 16px;
+        color: #0f7bbf;
+    }
+    span{
+        font-weight: 600;
+    }
+    .app-tv-topContent{
+        text-align: center;
+        font-size: 35px;
+        margin: 5px;
+        cursor: pointer;
+    }
+}

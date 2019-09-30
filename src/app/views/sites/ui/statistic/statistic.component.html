@@ -1,0 +1,137 @@
+<div class="app-home">
+  <div fxLayout="row wrap" fxLayout.xs="column">
+      <div fxFlex="100" class="top-heading">
+        Critical Usage info
+      </div>
+    <div fxFlex="66.66">
+       <div fxLayout="row wrap" fxLayout.xs="column">
+         <div fxFlex="50">
+           <div class="home-a">
+              <mat-toolbar class="home-toolbar" [style.background-color]="'#7cc576'">Active Devices</mat-toolbar>
+                <div class="progress-info">
+                  <div class="home-b">
+                    <span>On Lights</span>
+                    <span>12/100</span>
+                  </div>
+                  <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                </div>
+                <div class="progress-info">
+                  <div class="home-b">
+                    <span>On Lights</span>
+                    <span>12/100</span>
+                  </div>
+                  <mat-progress-bar mode="determinate" value="98"></mat-progress-bar>
+                </div>
+                <div class="progress-info">
+                  <div class="home-b">
+                    <span>On Lights</span>
+                    <span>12/100</span>
+                  </div>
+                  <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                </div>
+                <div class="progress-info">
+                  <div class="home-b">
+                    <span>On Lights</span>
+                    <span>12/100</span>
+                  </div>
+                  <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                </div>
+           </div>
+         </div>
+         <div fxFlex="50">
+          <div class="home-a">
+             <mat-toolbar class="home-toolbar" [style.background-color]="'#1cbbb4'">Longest Running Devices</mat-toolbar>
+               <div class="progress-info">
+                 <div class="home-b">
+                   <span>On Lights</span>
+                   <span>12/100</span>
+                 </div>
+                 <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+               </div>
+               <div class="progress-info">
+                 <div class="home-b">
+                   <span>On Lights</span>
+                   <span>12/100</span>
+                 </div>
+                 <mat-progress-bar mode="determinate" value="98"></mat-progress-bar>
+               </div>
+               <div class="progress-info">
+                 <div class="home-b">
+                   <span>On Lights</span>
+                   <span>12/100</span>
+                 </div>
+                 <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+               </div>
+               <div class="progress-info">
+                 <div class="home-b">
+                   <span>On Lights</span>
+                   <span>12/100</span>
+                 </div>
+                 <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+               </div>
+          </div>
+        </div>
+        <div fxFlex="50">
+          <div class="home-a">
+             <mat-toolbar class="home-toolbar" [style.background-color]="'#605ca8'">Location</mat-toolbar>
+             <agm-map [latitude]="lat" [longitude]="lng" [fullscreenControl]='true' [mapTypeControl]='true' [styles]='[
+             {"featureType": "road.highway",elementType: "labels",stylers:[{visibility: "off"}]},
+             {"featureType": "road.arterial",elementType: "labels",stylers: [{visibility: "off"}]}, 
+             {"featureType": "road.local",elementType: "labels",stylers: [{visibility: "off"}]} ]'>
+         </agm-map>
+          </div>
+        </div>
+        <div fxFlex="50">
+          <div class="home-a">
+            <mat-toolbar class="home-toolbar" [style.background-color]="'#448ccb'">Summary</mat-toolbar>
+              <table id="summary-table">
+                  <tr>
+                    <th>Previous Month</th>
+                    <th>Current Month</th>
+                  </tr>
+                  <tr>
+                    <td>
+                     <div class="home-toolbar-b">Running Hours</div>
+                     <div class="home-toolbar-c">23,856 Hrs 48 Mins</div>
+                    </td>
+                    <td>
+                      <div class="home-toolbar-b">Running Hours</div>
+                      <div class="home-toolbar-c">23,856 Hrs 48 Mins</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>Consumptions</span>
+                      <div class="home-toolbar-i">23,856 Units</div>
+                    </td>
+                    <td>
+                      <span>Consumptions</span>
+                      <div class="home-toolbar-i">23,856 Units</div>
+                    </td>
+                  </tr>
+              </table>
+          </div>
+        </div>
+       </div>
+    </div>
+    <div fxFlex="33.33">
+        <div class="home-a">
+            <mat-toolbar class="home-toolbar" [style.background-color]="'#448ccb'">Trend Analysis</mat-toolbar>
+            <div class="input-field">
+                <mat-form-field>
+                    <mat-select placeholder="Select devices">
+                      <mat-option value="option">Option</mat-option>
+                    </mat-select>
+                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                  </mat-form-field>
+            </div>
+            <div class="graphs-a">
+              <div [style.width.%]="100" [style.height.px]="190"  [chart]="chart"></div>
+            </div>
+            <div class="graphs-a">
+                <div [style.width.%]="100" [style.height.px]="190"  [chart]="chart1"></div>
+              </div>
+         </div>
+    </div>
+  </div>
+</div>

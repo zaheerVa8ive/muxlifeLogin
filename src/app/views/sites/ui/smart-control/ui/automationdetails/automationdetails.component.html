@@ -1,0 +1,99 @@
+<div class="top-menu-options">
+  <mat-tab-group>
+    <mat-tab *ngFor="let roomsTabs of automationData" id={{roomsTabs?.objectId}} [label]="roomsTabs?.name">
+      <div class="sectionbox">
+        <div class="automation-box">Devices Included In This Automation</div>
+        <div fxLayout-lt-lg="row wrap" fxLayout.gt-md="row wrap" fxLayout.lt-md="column">
+          <div *ngFor="let assocDevice of roomsTabs['selectedDevices']" class="smart-options" [style.padding]="'10px'"
+            fxFlex="25">
+            <div class="smart-options-a"
+              [ngClass]="assocDevice['device']['status'] === false ? 'disableClass' : 'smart-options-a'"
+              fxLayout="row">
+              <div fxLayout="row">
+                <i *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'SWS'"
+                  class="ml-socket deviceIcon"
+                  [ngClass]="assocDevice['device']['status'] === false ? 'deviceDisableIcons' : ''"></i>
+                <i *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'sdf'"
+                  class="ml-fan-dimme deviceIcon"
+                  [ngClass]="assocDevice['device']['status'] === false ? 'deviceDisableIcons' : ''"></i>
+                <i *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'SB3'"
+                  class="ml-switchboard deviceIcon"
+                  [ngClass]="assocDevice['device']['status'] === false ? 'deviceDisableIcons' : ''"></i>
+                <i *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'sol'" class="ml-plug deviceIcon"
+                  [ngClass]="assocDevice['device']['status'] === false ? 'deviceDisableIcons' : ''"></i>
+                <i *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'MSL'"
+                  class="ml-light deviceIcon"
+                  [ngClass]="assocDevice['device']['status'] === false ? 'deviceDisableIcons' : ''"></i>
+                <i *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'STX'" class="ml-IR deviceIcon"
+                  [ngClass]="assocDevice['device']['status'] === false ? 'deviceDisableIcons' : ''"></i>
+                <i *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'SBS'"
+                  class="ml-blinds deviceIcon"
+                  [ngClass]="assocDevice['device']['status'] === false ? 'deviceDisableIcons' : ''"></i>
+                <div class="smart-options-b" fxLayout="column">
+                  <span [style.font-size]="'11px'">{{assocDevice?.device.name }}</span>
+                  <span [style.font-size]="'9px'">{{assocDevice?.room.name }}</span>
+                </div>
+              </div>
+              <div class="smart-options-c" *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'sol' 
+                      || assocDevice['device']['primaryDeviceType']['typeValue'] === 'SWS' ">
+                <mat-slide-toggle
+                  [matTooltip]="assocDevice?.device.status === false ? 'Device is not connected' : 'Switch the toggle'"
+                  [checked]="((assocDevice?.device.state === true) ? true : false)"
+                  [disabled]="assocDevice?.device.status === false"
+                  (change)="Devicetoggle($event , assocDevice ,  assocDevice?.device.macAddress)"
+                  id="{{assocDevice?.device.macAddress}}"></mat-slide-toggle>
+              </div>
+              <div *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'SBS'">
+                <button mat-stroked-button color="primary" [disabled]="assocDevice['device']['status'] === false"
+                  [style.margin]="'5px'" (click)="smartBlindSateType(assocDevice)">Open</button>
+              </div>
+              <div *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'sdf'">
+                <button mat-stroked-button color="primary" [disabled]="assocDevice['device']['status'] === false"
+                  [matTooltip]="assocDevice['device']['status'] === false ? 'Device is not connected' : 'Open the button'"
+                  [style.margin]="'5px'" (click)="dimmerStateType(assocDevice)">Open</button>
+              </div>
+              <div *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'SB3'">
+                <button [disabled]="assocDevice['device']['status'] === false"
+                  (click)="switchboardStatus(assocDevice)" mat-stroked-button color="primary"
+                  [style.margin]="'5px'">Open</button>
+              </div>
+              <div *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'STX'">
+                <button [disabled]="assocDevice['device']['status'] === false"
+                  (click)="smartRemoteOverview(assocDevice)" mat-stroked-button color="primary"
+                  [style.margin]="'5px'">Open</button>
+              </div>
+              <div *ngIf="assocDevice['device']['primaryDeviceType']['typeValue'] === 'MSL'">
+                <button (click)="smartLightOption(assocDevice)" [disabled]="assocDevice['device']['status'] === false"
+                  mat-stroked-button color="primary" [style.margin]="'5px'">Open</button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="roomsTabs['selectedDevices'].length === 0">
+            <div class="noDevice " fxLayout="row">
+              There is no Device Selected for this Automation
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sectionbox">
+        <div class="automation-box">Devices Not Included In This Automation</div>
+        <div fxLayout-lt-lg="row wrap" fxLayout.gt-md="row wrap" fxLayout.lt-md="column">
+          <div *ngFor="let assocDevice of roomsTabs['notSelectedDevices']" class="smart-options" [style.padding]="'10px'"
+            fxFlex="25">
+            <div class="smart-options-a" fxLayout="row">
+              <img src="https://muxlifeassets.s3.ap-south-1.amazonaws.com/assets/icons/blub.png" height="50px" alt="">
+              <div class="smart-options-b" fxLayout="column">
+                <span [style.font-size]="'12px'">{{assocDevice?.device.name }}</span>
+                <span [style.font-size]="'9px'">{{assocDevice?.room.name }}</span>
+              </div>
+              <div class="smart-options-c">
+                <mat-slide-toggle [checked]="((assocDevice?.device.state == true) ? true : (assocDevice['device'] && assocDevice['device']['deviceSetting'] && assocDevice['device']['deviceSetting']['smartBlindsStateType'] && assocDevice['device']['deviceSetting']['smartBlindsStateType']['typeValue'] == on) ? true : false )"
+                  (click)="Devicetoggle($event , assocDevice ,  assocDevice?.device.macAddress)" id="{{assocDevice?.device.macAddress}}"></mat-slide-toggle>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

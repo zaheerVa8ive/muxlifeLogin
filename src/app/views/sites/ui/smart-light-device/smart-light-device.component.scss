@@ -1,0 +1,22 @@
+.mat-slider-horizontal {
+    height: 48px;
+    min-width: 100%;
+}
+.top-heading{
+    font-size: 15px;
+    font-weight: 500;
+}
+.space{
+    margin: 20px;
+}
+.deviceIcon{
+    font-size: 45px;
+    border: 5px solid #9e9c9ccc;
+    border-radius: 45px;
+    padding: 10px;
+    margin: 15px;
+    cursor: pointer;
+}
+[hidden] {
+    display: none !important;
+}

@@ -1,0 +1,26 @@
+<div *ngIf="!state" class="app-socket-dimmer">
+  <div>{{deviceObject?.name}}</div>
+  <div *ngIf="switchType === 'off'" class="dimmerIcon" fxLayoutAlign="center" (click)="dimmerSwitch(0 , deviceObject)">
+    <i [style.color]="'red'" class="ml-fan-dimme"></i></div>
+  <div *ngIf="switchType === 'on' || switchType === 'dim'  " class="dimmerIcon" fxLayoutAlign="center"
+    (click)="dimmerSwitch(1 , deviceObject)" [style.color]="'blue'"><i class="ml-fan-dimme"></i></div>
+  <mat-slider [disabled]="switchType === 'off'" [step]="5" min="0" max="95" matTooltip="slide me!"
+    (change)="dimmerSocketEvent($event , deviceObject)"></mat-slider>
+  <div fxLayoutAlign="end">
+    <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+  </div>
+</div>
+
+<div *ngIf="state" class="app-socket-dimmer">
+  <div>{{deviceObject?.name}}</div>
+  <div *ngIf="switchType === 'off'" class="dimmerIcon" fxLayoutAlign="center"
+    (click)="dimmerSwitchState(0 , deviceObject)"><i [style.color]="'red'" class="ml-fan-dimme"></i></div>
+  <div *ngIf="switchType === 'on' || switchType === 'dim'  " class="dimmerIcon" fxLayoutAlign="center"
+    (click)="dimmerSwitchState(1 , deviceObject)" [style.color]="'blue'"><i class="ml-fan-dimme"></i></div>
+  <mat-slider [disabled]="switchType === 'off'" thumbLabel aria-label="Slider with thumb label" tickInterval="auto"
+    [step]="5" min="0" max="95" [value]="15" matTooltip="slide me!" (change)="dimmerSocketEvent($event , deviceObject)">
+  </mat-slider>
+  <div fxLayoutAlign="end">
+    <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+  </div>
+</div>

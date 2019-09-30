@@ -1,0 +1,72 @@
+.app-smart-ctrl{
+    margin: 4px 1px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 7px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;
+
+    .scenes-div{
+        // background-color: #0071b9;
+        color: #0071b9;
+        box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+        margin: 6px;
+        padding: 5px;
+        border-radius: 16px;
+    }
+    .add-btn-icon{
+        border: none;
+        padding: 9px;
+        margin: 6px;
+        border-radius: 7px;
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 1px 7px 0 rgba(0, 0, 0, 0.19);
+    }
+    .scenes-div:hover{
+        background-color: #0071b9;
+        color: #ffffff;
+    }
+    .scenes-img{
+        margin: 5px 6px;
+    }
+    .scenes-img:hover{
+        // background-image: url("../../../../../assets/icons/scenes.png") no-repeat;
+        background-image: url("https://muxlifeassets.s3.ap-south-1.amazonaws.com/assets/icons/scenes.png") no-repeat;
+    }
+    .scenes-heading{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .scenes-sub-heading{
+        font-size: 12px;
+    }
+    .add-btn-a{
+        margin: 10px;
+    }
+    .scenes-made{
+        box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+        margin: 6px;
+        padding: 5px;
+        border-radius: 16px; 
+    }
+    .scenes-made-heading{
+        font-size: 22px;
+        margin: 8px 10px;
+        color : #666666;
+    }
+    .scenes-made-a{
+        margin: 11px;
+    }
+    .scenes-made-btn{
+        padding: 0px 40px;
+        border-radius: 61px;
+    }
+    .scenes-made-btn:hover{
+       color : #ffffff;
+       background-color: #0071b9;
+    }
+
+    .scenes-made-selected{
+        color : #ffffff;
+        background-color: #0071b9;
+     }
+     .automationDetail{
+         width:100%;
+     }
+}

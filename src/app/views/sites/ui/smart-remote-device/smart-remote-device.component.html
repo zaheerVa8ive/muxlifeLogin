@@ -1,0 +1,104 @@
+<div *ngIf="!deviceState"   class="app-smart-remote-device">
+  <div *ngIf="deviceType === 'AC'" class="device-main-div">
+        <div class="main-heading">{{smartRemoteDeviceOject?.name}}</div>
+        <mat-form-field>
+          <mat-label>set</mat-label>
+          <mat-select  (selectionChange)="smartRempteTypeAc($event)">
+            <mat-option *ngFor="let temp of tempObj" [value]="temp">{{temp}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div fxLayoutAlign="end">
+          <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+        </div>
+  </div>
+  <div *ngIf="deviceType === 'TV'" class="device-main-div">
+    <div class="main-heading">{{smartRemoteDeviceOject?.name}}</div>
+    <div class="app-multimedia-content">
+      <div fxLayout="row wrap">
+        <div class="app-tv-topContent" fxFlex="100">
+          <span *ngIf="tvSwtich === true"  matTooltip="Please switch off the tv" (click)="smartRemoteTypeTv(1 , 'on')"><i class="ml-tv" [style.color]="'blue'"></i></span>
+          <span *ngIf="tvSwtich === false" matTooltip="Please switch on the tv" (click)="smartRemoteTypeTv(0 , 'off')" ><i  class="ml-tv" [style.color]="'red'"></i></span>
+        </div>
+        <div fxLayout="row" class="tv-play-options">
+          <span>set channel:</span>
+          <button (click)="smartRemoteTypeTv(3 ,'progUp')" [disabled]="tvSwtich === false" mat-button><i class="ml-circle-up"></i></button>
+          <button mat-button (click)="smartRemoteTypeTv(3 ,'progDown')" [disabled]="tvSwtich === false"><i class="ml-circle-down"></i></button>
+        </div>
+        <div fxLayout="row" class="tv-set-volum-options">
+          <span>set volume:</span>
+          <button mat-button (click)="smartRemoteTypeTv(3 ,'volumeUp')" [disabled]="tvSwtich === false"><i class="ml-plus1" ></i></button>
+          <button mat-button (click)="smartRemoteTypeTv(3 , 'volumeDown')" [disabled]="tvSwtich === false"><i class="ml-minus1"></i></button>
+        </div>
+      </div>
+    </div>
+    <div fxLayoutAlign="end">
+      <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+    </div>
+  </div>
+  <div *ngIf="deviceType === 'Multimedia'" class="device-main-div">
+    <div class="main-heading">{{smartRemoteDeviceOject?.name}}</div>
+    <div class="app-multimedia-content">
+      <div fxLayout="row wrap">
+        <div fxFlex="100"></div>
+        <div fxLayout="row" class="multimedia-play-options">
+          <button mat-button (click)="smartRemoteTypeMulti(3 , 'previous')"><i class="ml-previous1"></i></button>
+          <button  *ngIf="playSwitch === true" (click)="smartRemoteTypeMulti(1 , 'playPause')" mat-button><i  class="ml-play21"></i></button>
+          <button  *ngIf="playSwitch === false" (click)="smartRemoteTypeMulti(2 , 'playPause')" mat-button><i class="ml-pause1"></i></button>
+          <button mat-button (click)="smartRemoteTypeMulti(3 , 'next')"><i class="ml-next1"></i></button>
+        </div>
+        <div fxLayout="row" class="multimedia-set-volum-options">
+          <span>set volume:</span>
+          <button mat-button (click)="smartRemoteTypeMulti(3 , 'volumeUp')"><i class="ml-plus1" ></i></button>
+          <button mat-button (click)="smartRemoteTypeMulti(3 , 'volumeDown')"><i class="ml-minus1"></i></button>
+        </div>
+      </div>
+    </div>
+    <div fxLayoutAlign="end">
+      <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="deviceState"   class="app-smart-remote-device">
+  <div *ngIf="deviceType === 'AC'" class="device-main-div">
+        <div class="main-heading">{{smartRemoteDeviceOject?.name}}</div>
+        <mat-form-field>
+          <mat-label>set</mat-label>
+          <mat-select  (selectionChange)="smartRempteTypeAcState($event)">
+            <mat-option *ngFor="let temp of tempObj" [value]="temp">{{temp}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div fxLayoutAlign="end">
+          <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+        </div>
+  </div>
+  <div *ngIf="deviceType === 'TV'" class="device-main-div">
+    <div class="main-heading">{{smartRemoteDeviceOject?.name}}</div>
+    <div class="app-multimedia-content">
+      <div fxLayout="row wrap">
+        <div class="app-tv-topContent" fxFlex="100">
+          <span *ngIf="tvSwtich === true"  matTooltip="Please switch off the tv" (click)="smartRemoteTypeTvState(1 , 'on')"><i class="ml-tv" [style.color]="'blue'"></i></span>
+          <span *ngIf="tvSwtich === false" matTooltip="Please switch on the tv" (click)="smartRemoteTypeTvState(0 , 'off')" ><i  class="ml-tv" [style.color]="'red'"></i></span>
+        </div>
+      </div>
+    </div>
+    <div fxLayoutAlign="end">
+      <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+    </div>
+  </div>
+  <div *ngIf="deviceType === 'Multimedia'" class="device-main-div">
+    <div class="main-heading">{{smartRemoteDeviceOject?.name}}</div>
+    <div class="app-multimedia-content">
+      <div fxLayout="row wrap">
+        <div fxFlex="100"></div>
+        <div fxLayout="row" class="multimedia-play-options">
+          <button  *ngIf="playSwitch === true" (click)="smartRemoteTypeMultiState(1 , 'playPause')" mat-button><i  class="ml-play21"></i></button>
+          <button  *ngIf="playSwitch === false" (click)="smartRemoteTypeMultiState(2 , 'playPause')" mat-button><i class="ml-pause1"></i></button>
+        </div>
+      </div>
+    </div>
+    <div fxLayoutAlign="end">
+      <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+    </div>
+  </div>
+</div>

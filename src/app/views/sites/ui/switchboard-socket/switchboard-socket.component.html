@@ -1,0 +1,36 @@
+<div class="app-swtichboard-socket">
+  <div *ngIf="!state" fxLayout="row wrap">
+    <div fxFlex="33.33">
+        <label for="">Switch1</label>
+        <mat-slide-toggle [checked]="smartSocketObject['deviceSetting']['switch1State'] === true ? 'true' : 'false'" (change)="buttonTriger($event , 1)"></mat-slide-toggle>
+    </div>
+    <div fxFlex="33.33">
+        <label for="">Switch2</label>
+        <mat-slide-toggle [checked]="smartSocketObject['deviceSetting']['switch2State'] === true ? 'true' : smartSocketObject['deviceSetting']['switch2State'] === 'false'" (change)="buttonTriger($event , 2)"></mat-slide-toggle>
+    </div>
+    <div fxFlex="33.33">
+        <label for="">Switch3</label>
+        <mat-slide-toggle [checked]="smartSocketObject['deviceSetting']['switch3State'] === true ? 'true' : smartSocketObject['deviceSetting']['switch3State'] === 'false'" (change)="buttonTriger($event , 3)"></mat-slide-toggle>
+    </div>
+    <div class="applyBtns" fxFlex="100" fxLayoutAlign="end">
+      <button mat-stroked-button (click)="sumbitFunc()">Ok</button>
+    </div>
+  </div>
+  <div *ngIf="state" fxLayout="row wrap">
+    <div fxFlex="33.33">
+        <label for="">Switch1</label>
+        <mat-slide-toggle [checked]="smartSocketObject['deviceSetting']['switch1State'] === true ? 'true' : 'false'" (change)="buttonTrigerState($event , 1)"></mat-slide-toggle>
+    </div>
+    <div fxFlex="33.33">
+        <label for="">Switch2</label>
+        <mat-slide-toggle [checked]="smartSocketObject['deviceSetting']['switch2State'] === true ? 'true' : smartSocketObject['deviceSetting']['switch2State'] === 'false'" (change)="buttonTrigerState($event , 2)"></mat-slide-toggle>
+    </div>
+    <div fxFlex="33.33">
+        <label for="">Switch3</label>
+        <mat-slide-toggle [checked]="smartSocketObject['deviceSetting']['switch3State'] === true ? 'true' : smartSocketObject['deviceSetting']['switch3State'] === 'false'" (change)="buttonTrigerState($event , 3)"></mat-slide-toggle>
+    </div>
+    <div class="applyBtns" fxFlex="100" fxLayoutAlign="end">
+      <button mat-stroked-button (click)="sumbitFunc()">Ok</button>
+    </div>
+  </div>
+</div>

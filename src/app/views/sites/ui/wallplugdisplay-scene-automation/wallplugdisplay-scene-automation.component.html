@@ -1,0 +1,21 @@
+<div class="app-smart-blind-device">
+  <div class="device-main-div">
+    <div class="main-heading">{{smartSocketPlugDeviceObject?.name}}</div>
+    <div fxLayoutAlign="center">
+      <i *ngIf="smartSocketPlugDeviceObject['primaryDeviceType']['typeValue'] === 'sol'" class="ml-plug deviceIcon"></i>
+      <i *ngIf="smartSocketPlugDeviceObject['primaryDeviceType']['typeValue'] === 'SWS'" class="ml-socket deviceIcon"></i>   
+    </div>
+    <div *ngIf="data.state" class="app-smartBlind-content">
+      <div fxLayout="row wrap">
+        <div fxFlex="100"></div>
+        <div fxLayout="row" class="smart-blind-control-options">
+          <button mat-button matTooltip="Off" (click)="socketPlugdeviceState(false)"><i class="ml-circle-down"></i></button>
+          <button matTooltip="On" mat-button (click)="socketPlugdeviceState(true)"><i class="ml-circle-up"></i></button>
+        </div>
+      </div>
+    </div>
+    <div fxLayoutAlign="end">
+      <button mat-stroked-button (click)="onNoClick()" color="primary">Close</button>
+    </div>
+  </div>
+</div>

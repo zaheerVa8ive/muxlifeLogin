@@ -1,0 +1,33 @@
+<div class="sidebar-panel">
+  <div id="scroll-area" [perfectScrollbar] class="navigation-hold" fxLayout="column">
+    <!-- App Logo -->
+    <div class="branding default-bg">
+      <!-- <img src="assets/images/logo.png" alt="" class="app-logo">
+      <img 
+      src="assets/images/logo-text-white.png" 
+      alt="" 
+      class="app-logo-text"
+      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') !== -1">
+      <img 
+      src="assets/images/logo-text.png" 
+      alt="" 
+      class="app-logo-text"
+      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') === -1"> -->
+      <!-- <img src="../../../../assets/icons/logo.png" height="90px" alt=""> -->
+      <img src="https://muxlifeassets.s3.ap-south-1.amazonaws.com/assets/icons/logo.png" height="90px" alt="">
+    </div>
+
+    <!-- Sidebar user -->
+    <!-- <div class="app-user">
+      <div class="app-user-photo">
+        <img src="assets/images/face-7.jpg" alt="">
+      </div>
+      <span class="app-user-name mb-05">
+        <mat-icon class="icon-xs text-muted">lock</mat-icon> 
+        Watson Joyce
+      </span>
+    </div> -->
+    <!-- Navigation -->
+    <app-sidenav [items]="menuItems" [style.color]="'#ffffff'" [hasIconMenu]="hasIconTypeMenuItem" [iconMenuTitle]="iconTypeMenuTitle"></app-sidenav>
+  </div>
+</div>

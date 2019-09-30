@@ -1,0 +1,10 @@
+/* .mat-dialog-content {
+  min-height: 0 auto;
+} */
+
+.egret-indigo .custom-modalbox mat-dialog-container {
+
+  background: transparent;
+  box-shadow: none;
+
+}

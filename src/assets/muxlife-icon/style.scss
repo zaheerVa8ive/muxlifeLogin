@@ -1,0 +1,159 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?s0blp6');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?s0blp6#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?s0blp6') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?s0blp6') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?s0blp6##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ml-"], [class*=" ml-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ml-phone1 {
+  &:before {
+    content: $ml-phone1; 
+  }
+}
+.ml-envelop1 {
+  &:before {
+    content: $ml-envelop1; 
+  }
+}
+.ml-user-tie1 {
+  &:before {
+    content: $ml-user-tie1; 
+  }
+}
+.ml-circle-up {
+  &:before {
+    content: $ml-circle-up; 
+  }
+}
+.ml-circle-down {
+  &:before {
+    content: $ml-circle-down; 
+  }
+}
+.ml-plus1 {
+  &:before {
+    content: $ml-plus1; 
+  }
+}
+.ml-minus1 {
+  &:before {
+    content: $ml-minus1; 
+  }
+}
+.ml-play21 {
+  &:before {
+    content: $ml-play21; 
+  }
+}
+.ml-pause1 {
+  &:before {
+    content: $ml-pause1; 
+  }
+}
+.ml-previous1 {
+  &:before {
+    content: $ml-previous1; 
+  }
+}
+.ml-next1 {
+  &:before {
+    content: $ml-next1; 
+  }
+}
+.ml-blind_down {
+  &:before {
+    content: $ml-blind_down; 
+  }
+}
+.ml-blind_up {
+  &:before {
+    content: $ml-blind_up; 
+  }
+}
+.ml-scenes {
+  &:before {
+    content: $ml-scenes; 
+  }
+}
+.ml-automation {
+  &:before {
+    content: $ml-automation; 
+  }
+}
+.ml-IR {
+  &:before {
+    content: $ml-IR; 
+  }
+}
+.ml-plug {
+  &:before {
+    content: $ml-plug; 
+  }
+}
+.ml-Smart-light {
+  &:before {
+    content: $ml-Smart-light; 
+  }
+}
+.ml-ac {
+  &:before {
+    content: $ml-ac; 
+  }
+}
+.ml-blinds {
+  &:before {
+    content: $ml-blinds; 
+  }
+}
+.ml-curtains {
+  &:before {
+    content: $ml-curtains; 
+  }
+}
+.ml-fan-dimme {
+  &:before {
+    content: $ml-fan-dimme; 
+  }
+}
+.ml-light {
+  &:before {
+    content: $ml-light; 
+  }
+}
+.ml-socket {
+  &:before {
+    content: $ml-socket; 
+  }
+}
+.ml-switchboard {
+  &:before {
+    content: $ml-switchboard; 
+  }
+}
+.ml-tv {
+  &:before {
+    content: $ml-tv; 
+  }
+}
+

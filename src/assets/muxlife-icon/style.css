@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'muxlife';
+  src:  url('fonts/muxlife.eot?s0blp6');
+  src:  url('fonts/muxlife.eot?s0blp6#iefix') format('embedded-opentype'),
+    url('fonts/muxlife.ttf?s0blp6') format('truetype'),
+    url('fonts/muxlife.woff?s0blp6') format('woff'),
+    url('fonts/muxlife.svg?s0blp6#muxlife') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ml-"], [class*=" ml-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'muxlife' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ml-phone1:before {
+  content: "\e942";
+}
+.ml-envelop1:before {
+  content: "\e945";
+}
+.ml-user-tie1:before {
+  content: "\e976";
+}
+.ml-circle-up:before {
+  content: "\ea41";
+}
+.ml-circle-down:before {
+  content: "\ea43";
+}
+.ml-plus1:before {
+  content: "\ea0a";
+}
+.ml-minus1:before {
+  content: "\ea0b";
+}
+.ml-play21:before {
+  content: "\ea15";
+}
+.ml-pause1:before {
+  content: "\ea16";
+}
+.ml-previous1:before {
+  content: "\ea18";
+}
+.ml-next1:before {
+  content: "\ea19";
+}
+.ml-blind_down:before {
+  content: "\e90d";
+}
+.ml-blind_up:before {
+  content: "\e90e";
+}
+.ml-scenes:before {
+  content: "\e90c";
+}
+.ml-automation:before {
+  content: "\e90b";
+}
+.ml-IR:before {
+  content: "\e908";
+}
+.ml-plug:before {
+  content: "\e909";
+}
+.ml-Smart-light:before {
+  content: "\e90a";
+}
+.ml-ac:before {
+  content: "\e900";
+}
+.ml-blinds:before {
+  content: "\e901";
+}
+.ml-curtains:before {
+  content: "\e902";
+}
+.ml-fan-dimme:before {
+  content: "\e903";
+}
+.ml-light:before {
+  content: "\e904";
+}
+.ml-socket:before {
+  content: "\e905";
+}
+.ml-switchboard:before {
+  content: "\e906";
+}
+.ml-tv:before {
+  content: "\e907";
+}
