@@ -32,19 +32,4 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.themeService.applyMatTheme(this.renderer)
   }
-  // changePageTitle() {
-  //   this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((routeChange) => {
-  //     var routeParts = this.routePartsService.generateRouteParts(this.activeRoute.snapshot);
-  //     if (!routeParts.length)
-  //       return this.title.setTitle(this.appTitle);
-  //     // Extract title from parts;
-  //     this.pageTitle = routeParts
-  //                     .reverse()
-  //                     .map((part) => part.title )
-  //                     .reduce((partA, partI) => {return `${partA} > ${partI}`});
-  //     this.pageTitle += ` | ${this.appTitle}`;
-  //     this.title.setTitle(this.pageTitle);
-  //   });
-  // }
-  
 }

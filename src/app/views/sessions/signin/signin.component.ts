@@ -34,7 +34,6 @@ export class SigninComponent implements OnInit {
       data => {
         if (data) {
           localStorage.setItem("user", JSON.stringify(data));
-          // this.router.navigate(["/dashboard"]);
         }
       },
       err => {

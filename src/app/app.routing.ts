@@ -6,32 +6,10 @@ import { AppComponent } from './app.component';
 import { SigninComponent } from './views/sessions/signin/signin.component';
 
 export const rootRouterConfig: Routes = [
-  // { 
-  //   path: '', 
-  //   // redirectTo: '/sessions/signin', 
-  //   component: AppComponent,
-  //   pathMatch: 'full' 
-  // },
-
   { 
       path: '', 
       component: SigninComponent,
       pathMatch: 'full' 
-  },
-  // {
-  //   path: '', 
-  //   component: AuthLayoutComponent,
-  //   children: [
-  //     { 
-  //       path: 'sessions', 
-  //       loadChildren: './views/sessions/sessions.module#SessionsModule',
-  //       data: { title: 'Session'} 
-  //     }
-  //   ]
-  // },
-  // { 
-  //   path: '**', 
-  //   redirectTo: 'sessions/404'
-  // }
+  }
 ];
 
