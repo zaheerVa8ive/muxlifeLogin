@@ -29,18 +29,6 @@ export const rootRouterConfig: Routes = [
   //     }
   //   ]
   // },
-  // {
-  //   path: '', 
-  //   component: AdminLayoutComponent,
-  //   canActivate: [AuthGuard],
-  //   children: [
-  //     {
-  //       path: 'edit_profile', 
-  //       loadChildren: './views/profile/profile.module#profileModule', 
-  //       data: { title: 'Profile', breadcrumb: 'PROFILE'}
-  //     }
-  //   ]
-  // },
   // { 
   //   path: '**', 
   //   redirectTo: 'sessions/404'
