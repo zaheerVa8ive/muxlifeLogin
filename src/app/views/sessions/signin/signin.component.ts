@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit {
   signinForm: FormGroup;
   formErrors: any;
 
-  constructor(private router: Router, private sessionService: SessionService) {}
+  constructor(private router: Router, private sessionService: SessionService) { }
 
   ngOnInit() {
     this.signinForm = new FormGroup({
@@ -32,6 +32,8 @@ export class SigninComponent implements OnInit {
     this.progressBar.mode = "indeterminate";
     this.sessionService.sessionSignIn(signinData).subscribe(
       data => {
+        alert(data);
+        return data;
         if (data) {
           localStorage.setItem("user", JSON.stringify(data));
         }
