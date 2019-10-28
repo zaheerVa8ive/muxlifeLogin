@@ -40,7 +40,8 @@ export class SigninComponent implements OnInit {
     this.sessionService.sessionSignIn(signinData).subscribe(
       data => {
         if (data) {
-          localStorage.setItem("user", JSON.stringify(data));
+          // localStorage.setItem("user", JSON.stringify(data));
+          console.log("data",data)
           self._snackBar.openFromComponent(NotificationComponent, {
             data: 'You Are Succesfully Login !',
             duration: 2000
