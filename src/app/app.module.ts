@@ -1,11 +1,12 @@
+import { NotificationComponent } from './views/sessions/notification/notification.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GestureConfig } from '@angular/material';
-import { 
-  PerfectScrollbarModule, 
-  PERFECT_SCROLLBAR_CONFIG, 
+import {
+  PerfectScrollbarModule,
+  PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface
 } from 'ngx-perfect-scrollbar';
 
@@ -17,9 +18,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SigninComponent } from './views/sessions/signin/signin.component';
-
-
-
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -46,7 +44,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     }),
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
-  declarations: [AppComponent , SigninComponent],
+  declarations: [AppComponent, SigninComponent, NotificationComponent],
+  entryComponents: [NotificationComponent],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
     { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG }
