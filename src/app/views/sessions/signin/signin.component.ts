@@ -46,7 +46,9 @@ export class SigninComponent implements OnInit {
             data: 'You Are Succesfully Login !',
             duration: 2000
           });
-          return;
+          // window.location.href = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b?code=${data.sessionToken}&state=${data.state}`;
+          window.location.href = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b#access_token=${data.idToken}&token_type=bearer&state=${data.state}`
+          // return;
         }
       },
       err => {
