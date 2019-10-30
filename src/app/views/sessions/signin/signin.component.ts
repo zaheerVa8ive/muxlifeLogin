@@ -47,7 +47,13 @@ export class SigninComponent implements OnInit {
             duration: 2000
           });
           // window.location.href = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b?code=${data.sessionToken}&state=${data.state}`;
-          window.location.href = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b#access_token=${data.idToken}&token_type=bearer&state=${data.state}`
+          // window.location.href = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b#access_token=${data.idToken}&token_type=bearer&state=${data.state}`;
+          var redirectURL = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b?code=${data.sessionToken}&state=${data.state}`;
+          var redirectURL2 = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b#access_token=${data.sessionToken}&token_type=bearer&state=${data.state}`;
+          console.log("redirectURL",redirectURL);
+          console.log("redirectURL2",redirectURL2);
+          window.location.href = redirectURL2;
+          // window.location.href = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b?code=${data.idToken}&state=${data.state}`;
           // return;
         }
       },
