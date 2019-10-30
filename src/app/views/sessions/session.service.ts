@@ -23,8 +23,10 @@ export class SessionService {
   public sessionSignIn(user){
     const headers = new Headers();
     headers.append('Content-Type','application/json');
-    headers.append('X-Parse-Application-Id','lJ42aRr2G5yuP2lIqV94Cupx58EBP0eFLdstkIz1');
-    headers.append('X-Parse-REST-API-Key','tb7URXifVfbE8fWCDhT80lJQaL4FuTLzIg5vadTD');
+    // headers.append('X-Parse-Application-Id','lJ42aRr2G5yuP2lIqV94Cupx58EBP0eFLdstkIz1');
+    // headers.append('X-Parse-REST-API-Key','tb7URXifVfbE8fWCDhT80lJQaL4FuTLzIg5vadTD');
+    headers.append('X-Parse-Application-Id','VoTruDscDdgBlpazAgUxUULqlz4Q5g9ONTq5OYUe');
+    headers.append('X-Parse-REST-API-Key','SnYl1TprV95zGVmCWKycj5vL8B6d86E7LfPKzJhc');
     
     return this.http.post(this.baseUrl + 'api/login' , user , {headers : headers})
     .map(res => res.json());
@@ -53,8 +55,10 @@ export class SessionService {
   public forgotPasswordApi(email) {
     const headers = new Headers();
     headers.append('Content-Type','application/json');
-    headers.append('X-Parse-Application-Id','lJ42aRr2G5yuP2lIqV94Cupx58EBP0eFLdstkIz1');
-    headers.append('X-Parse-REST-API-Key','tb7URXifVfbE8fWCDhT80lJQaL4FuTLzIg5vadTD');
+    // headers.append('X-Parse-Application-Id','lJ42aRr2G5yuP2lIqV94Cupx58EBP0eFLdstkIz1');
+    // headers.append('X-Parse-REST-API-Key','tb7URXifVfbE8fWCDhT80lJQaL4FuTLzIg5vadTD');
+    headers.append('X-Parse-Application-Id','VoTruDscDdgBlpazAgUxUULqlz4Q5g9ONTq5OYUe');
+    headers.append('X-Parse-REST-API-Key','SnYl1TprV95zGVmCWKycj5vL8B6d86E7LfPKzJhc');
     
     let url = `${environment.baseUrl}api/functions/resetPassword14Digits`;
       
