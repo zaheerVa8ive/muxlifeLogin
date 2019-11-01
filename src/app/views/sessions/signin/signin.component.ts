@@ -70,9 +70,8 @@ export class SigninComponent implements OnInit {
           // localStorage.setItem("user", JSON.stringify(data));
           console.log("data",data);
           self._snackBar.openFromComponent(NotificationComponent, {
-            // data: 'You Are Succesfully Login !',
-            data: `You , ${self.state}`,
-            // duration: 2000
+            data: 'You Are Succesfully Login !',
+            duration: 2000
           });
           console.log("this.client_id",this.client_id);
           // window.location.href = `https://oauth-redirect.googleusercontent.com/r/lucky-calculator-c272b?code=${data.sessionToken}&state=${data.state}`;
