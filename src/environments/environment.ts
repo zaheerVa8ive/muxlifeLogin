@@ -6,7 +6,6 @@
 export const environment = {
   production: false,
   apiURL: 'developmentApi',
-  // baseUrl : 'http://iot-app.us-east-1.elasticbeanstalk.com/',
-  baseUrl : 'https://fa32f522.ngrok.io/',
+  baseUrl : 'https://api.mux.life/',
   mqttClient : 'ws://server.mux.life:9001' 
 };

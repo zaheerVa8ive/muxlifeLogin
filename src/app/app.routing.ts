@@ -7,7 +7,7 @@ import { SigninComponent } from './views/sessions/signin/signin.component';
 
 export const rootRouterConfig: Routes = [
   { 
-      path: '', 
+      path: ':state', 
       component: SigninComponent,
       pathMatch: 'full' 
   }
